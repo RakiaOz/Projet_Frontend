@@ -1,0 +1,35 @@
+# robots.txt — Transformation Factory
+# https://projet-frontend-rakiaozs-projects.vercel.app
+
+# Crawlers standards
+User-agent: *
+Allow: /
+Disallow: /private/
+
+# Agents IA & LLMs — accès autorisé
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+# Sitemap
+Sitemap: https://projet-frontend-rakiaozs-projects.vercel.app/sitemap.xml
+
+# LLMs context file
+# See: https://projet-frontend-rakiaozs-projects.vercel.app/llms.txt

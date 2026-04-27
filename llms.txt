@@ -1,0 +1,57 @@
+# Transformation Factory — llms.txt
+# Standard: https://llmstxt.org
+# Ce fichier fournit un résumé structuré du site pour les agents IA et LLMs.
+
+## Identité
+
+- **Nom** : Transformation Factory (TFactory)
+- **Type** : Cabinet de conseil en transformation stratégique
+- **Fondé** : 2018
+- **Taille** : ~40 consultants
+- **Localisation** : 19 Rue du 4 Septembre, 75002 Paris
+- **Site** : https://www.tfactory.fr
+- **Email** : contact@tfactory.fr
+- **LinkedIn** : https://fr.linkedin.com/company/transformation-factory
+
+## Positionnement
+
+Transformation Factory recréé la continuité entre la stratégie et son exécution,
+là où la valeur se joue vraiment. Un conseil engagé sur la valeur créée, pas sur le temps passé.
+
+Tagline : "Transformation concrète, visible, durable."
+
+Piliers :
+1. Continuité stratégie–exécution (vs la fragmentation traditionnelle)
+2. Rémunération indexée sur la valeur créée (vs jours/hommes)
+
+## Secteurs
+
+- Banque & marchés de capitaux
+- Assurance & services financiers
+- Entreprises industrielles en mutation
+
+## Expertises
+
+- **Continuité Stratégique** : Recréer le lien entre conception et exécution
+- **Passage à l'Action** : Clarifier les arbitrages, sécuriser les décisions
+- **Relance & Déblocage** : Intervenir en cas de blocage, remettre en mouvement
+- **Impact Durable** : Transformation observable, valeur immatérielle créée
+
+## Équipe
+
+Consultants alliant sérieux analytique et capacité d'invention.
+Fonctionnement horizontal. Culture : exigence intellectuelle, fiabilité, créativité.
+
+## Punchlines clés
+
+- "Transformation Factory remet la stratégie en mouvement, concrètement, visiblement, durablement."
+- "Le conseil qui relie enfin la vision, la décision et l'exécution."
+- "Moins de fragmentation, plus d'impact."
+- "Un conseil engagé sur la valeur créée, pas sur le temps passé."
+
+## Pages disponibles
+
+- / — Landing page principale
+- /llms.txt — Ce fichier
+- /robots.txt — Règles d'accès
+- /sitemap.xml — Plan du site
