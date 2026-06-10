@@ -730,15 +730,85 @@ async function generateRecevoirInsight() {
 }
 </script>
 
+
+<!-- ========== MODAL TÉLÉCHARGEMENT ========== -->
+<div id="download-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;">
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:6px;width:100%;max-width:480px;padding:40px;position:relative;">
+        <button onclick="closeDownloadModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:#64748b;font-size:26px;cursor:pointer;line-height:1;">&times;</button>
+        <p style="color:#B29063;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:8px;">Accès gratuit</p>
+        <h2 id="download-modal-titre" style="color:white;font-size:20px;font-weight:700;margin:0 0 6px 0;line-height:1.3;"></h2>
+        <p style="color:#64748b;font-size:13px;margin:0 0 28px 0;">Complétez le formulaire pour recevoir le document.</p>
+        <form id="download-form" onsubmit="submitDownloadForm(event)" style="display:flex;flex-direction:column;gap:14px;">
+            <div>
+                <label style="color:#94a3b8;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:6px;">Nom complet *</label>
+                <input type="text" id="dl-nom" required placeholder="Jean Dupont" style="width:100%;padding:10px 12px;background:#0f172a;border:1px solid #334155;border-radius:3px;color:white;font-size:13px;font-family:Montserrat,sans-serif;box-sizing:border-box;" />
+            </div>
+            <div>
+                <label style="color:#94a3b8;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:6px;">Email professionnel *</label>
+                <input type="email" id="dl-email" required placeholder="nom@entreprise.com" style="width:100%;padding:10px 12px;background:#0f172a;border:1px solid #334155;border-radius:3px;color:white;font-size:13px;font-family:Montserrat,sans-serif;box-sizing:border-box;" />
+            </div>
+            <div>
+                <label style="color:#94a3b8;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:6px;">Entreprise</label>
+                <input type="text" id="dl-entreprise" placeholder="Nom de votre organisation" style="width:100%;padding:10px 12px;background:#0f172a;border:1px solid #334155;border-radius:3px;color:white;font-size:13px;font-family:Montserrat,sans-serif;box-sizing:border-box;" />
+            </div>
+            <div>
+                <label style="color:#94a3b8;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:6px;">Fonction</label>
+                <select id="dl-fonction" style="width:100%;padding:10px 12px;background:#0f172a;border:1px solid #334155;border-radius:3px;color:white;font-size:13px;font-family:Montserrat,sans-serif;box-sizing:border-box;">
+                    <option value="">Sélectionner...</option>
+                    <option>C-Level / Direction</option>
+                    <option>Directeur de Programme</option>
+                    <option>Direction IT / DSI</option>
+                    <option>Manager / Consultant</option>
+                    <option>Autre</option>
+                </select>
+            </div>
+            <button type="submit" id="dl-submit-btn" style="margin-top:6px;padding:13px;background:#026490;color:white;border:none;border-radius:3px;font-size:11px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:0.1em;font-family:Montserrat,sans-serif;transition:background 0.2s;">
+                ⬇ Télécharger le document
+            </button>
+            <p style="color:#475569;font-size:10px;text-align:center;margin:0;">En soumettant ce formulaire, vous acceptez notre politique de confidentialité.</p>
+        </form>
+    </div>
+</div>
+
 <script>
+let _dlPdfPath = '';
+
 function openDownloadForm(titre, pdfPath) {
-    const a = document.createElement('a');
-    a.href = pdfPath;
-    a.download = pdfPath.split('/').pop();
-    a.target = '_blank';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    _dlPdfPath = pdfPath;
+    document.getElementById('download-modal-titre').textContent = titre;
+    document.getElementById('download-form').reset();
+    document.getElementById('dl-submit-btn').textContent = '⬇ Télécharger le document';
+    const modal = document.getElementById('download-modal');
+    modal.style.display = 'flex';
 }
+
+function closeDownloadModal() {
+    document.getElementById('download-modal').style.display = 'none';
+}
+
+function submitDownloadForm(e) {
+    e.preventDefault();
+    const btn = document.getElementById('dl-submit-btn');
+    btn.textContent = '✓ Téléchargement en cours...';
+    btn.style.background = '#143055';
+    
+    // Déclencher le téléchargement
+    setTimeout(() => {
+        const a = document.createElement('a');
+        a.href = _dlPdfPath;
+        a.download = _dlPdfPath.split('/').pop();
+        a.target = '_blank';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        
+        setTimeout(() => closeDownloadModal(), 800);
+    }, 400);
+}
+
+// Fermer en cliquant en dehors
+document.getElementById('download-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeDownloadModal();
+});
 </script>
 </body></html>
