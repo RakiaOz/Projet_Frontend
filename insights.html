@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFactory | Insights & IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --color-brand-900: #143055;
+            --color-brand-accent: #026490;
+            --color-brand-silver: #F2F2F2;
+            --color-brand-gold: #B29063;
+            --font-main: 'Montserrat', sans-serif;
+        }
+        * { -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Montserrat', sans-serif; }
+        .btn-lire-article {
+            border: 1px solid #026490; color: #026490; background: transparent;
+            border-radius: 2px; padding: 6px 14px; font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-lire-article:hover { background: #026490; color: white; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            900: 'var(--color-brand-900)',
+                            800: '#0d2240',
+                            accent: 'var(--color-brand-accent)',
+                            silver: 'var(--color-brand-silver)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white">
+
+<!-- Navbar simple -->
+<nav class="fixed w-full z-50 bg-brand-900 border-b border-slate-700" style="border-top:3px solid #B29063;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <a href="https://projet-frontend-2.vercel.app">
+                <img src="logo-tf.png" alt="TFactory" style="height:48px;width:auto;" />
+            </a>
+            <a href="https://projet-frontend-2.vercel.app" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+                ← Retour au site
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Header page -->
+<div class="pt-28 pb-12 text-center" style="background:#143055;">
+    <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#B29063;">TFactory</p>
+    <h1 class="text-4xl font-bold text-white mb-4">Insights & IA</h1>
+    <div class="w-16 h-1 mx-auto" style="background:#B29063;"></div>
+    <p class="text-slate-300 mt-4 text-sm max-w-xl mx-auto">Nos publications, analyses et outils d'intelligence artificielle pour les services financiers.</p>
+</div>
+
+<section id="insights" class="py-24 bg-brand-900 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-accent/10 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#B29063;">Publications</p>
+            <h2 class="text-4xl font-bold text-white mb-4">Nos Publications</h2>
+            <div class="w-16 h-1 mx-auto" style="background:#B29063;"></div>
+        </div>
+
+        <!-- Publications Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Publication 1 -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-sm overflow-hidden hover:border-brand-accent transition-all duration-300 group flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://tfactory.fr/wp-content/uploads/2026/05/Transformation-Factory-Club-ENA-Immo-Livre-blanc-Politique-Logement-Avril-2026-2.png" alt="Livre Blanc Immobilier" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <span class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#B29063;">12 mai 2026</span>
+                    <h3 class="text-white font-bold text-lg mb-3 leading-tight">Livre Blanc : Immobilier, politique du logement et climat</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed flex-1">L'immobilier français traverse une crise sans précédent. Ce livre blanc formule 10 propositions clés pour relancer le secteur à l'horizon 2027.</p>
+                    <div class="flex gap-3 mt-5">
+                        <button onclick="openArticle('livre-blanc-immobilier-politique-du-logement-et-climat')" class="btn-lire-article">Lire l'article</button>
+                        <button onclick="openDownloadForm('Livre Blanc : Immobilier, politique du logement et climat', 'publications/livre-blanc-immobilier.pdf')" class="flex-1 text-center text-xs font-bold uppercase tracking-wider py-2 px-4 transition-all duration-300 text-white" style="background:#026490;">⬇ Télécharger</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publication 2 -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-sm overflow-hidden hover:border-brand-accent transition-all duration-300 group flex flex-col">
+                <div class="h-48 overflow-hidden relative flex items-center justify-center" style="background: linear-gradient(135deg, #143055 0%, #026490 100%);">
+                    <div class="text-center px-6">
+                        <p class="text-white/60 text-xs font-bold uppercase tracking-widest mb-2">TF Insights</p>
+                        <p class="text-white text-4xl font-black">#4</p>
+                        <p class="text-white/80 text-sm mt-2 font-medium">Édition Mars 2026</p>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 h-1" style="background:#B29063;"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <span class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#B29063;">30 mars 2026</span>
+                    <h3 class="text-white font-bold text-lg mb-3 leading-tight">TF Insights #4 – Édition Mars 2026</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed flex-1">Décryptage d'un tournant décisif vers une conformité plus agile. La lettre d'actualité de référence du Hub Expertises Métiers & Réglementation.</p>
+                    <div class="flex gap-3 mt-5">
+                        <button onclick="openArticle('tf-insights-4-edition-mars-2026')" class="btn-lire-article">Lire l'article</button>
+                        <button onclick="openDownloadForm('TF Insights #4 – Édition Mars 2026', 'publications/insights-4.pdf')" class="flex-1 text-center text-xs font-bold uppercase tracking-wider py-2 px-4 transition-all duration-300 text-white" style="background:#026490;">⬇ Télécharger</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publication 3 -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-sm overflow-hidden hover:border-brand-accent transition-all duration-300 group flex flex-col">
+                <div class="h-48 overflow-hidden relative flex items-center justify-center" style="background: linear-gradient(135deg, #143055 0%, #026490 100%);">
+                    <div class="text-center px-6">
+                        <p class="text-white/60 text-xs font-bold uppercase tracking-widest mb-2">TF Insights</p>
+                        <p class="text-white text-4xl font-black">#3</p>
+                        <p class="text-white/80 text-sm mt-2 font-medium">Édition Décembre 2025</p>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 h-1" style="background:#B29063;"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <span class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#B29063;">3 décembre 2025</span>
+                    <h3 class="text-white font-bold text-lg mb-3 leading-tight">TF Insights #3 – Édition Décembre 2025</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed flex-1">Moment charnière dans un paysage financier en mutation. Décryptage des enjeux réglementaires de fin d'année 2025.</p>
+                    <div class="flex gap-3 mt-5">
+                        <button onclick="openArticle('tf-insights-3-edition-decembre-2025')" class="btn-lire-article">Lire l'article</button>
+                        <button onclick="openDownloadForm('TF Insights #3 – Édition Décembre 2025', 'https://app-insighttf.vercel.app/')" class="flex-1 text-center text-xs font-bold uppercase tracking-wider py-2 px-4 transition-all duration-300 text-white" style="background:#026490;">⬇ Télécharger</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publication 4 -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-sm overflow-hidden hover:border-brand-accent transition-all duration-300 group flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://tfactory.fr/wp-content/uploads/2025/09/TF-Insights-2-Banniere-1024x512.jpg" alt="TF Insights 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <span class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#B29063;">11 septembre 2025</span>
+                    <h3 class="text-white font-bold text-lg mb-3 leading-tight">TF Insights #2 – Édition Septembre 2025</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed flex-1">Réformes européennes structurantes et supervision renforcée. L'essentiel de l'actualité réglementaire bancaire et financière.</p>
+                    <div class="flex gap-3 mt-5">
+                        <button onclick="openArticle('tf-insights-2-edition-septembre-2025')" class="btn-lire-article">Lire l'article</button>
+                        <button onclick="openDownloadForm('TF Insights #2 – Édition Septembre 2025', 'https://newslettreapp.vercel.app/')" class="flex-1 text-center text-xs font-bold uppercase tracking-wider py-2 px-4 transition-all duration-300 text-white" style="background:#026490;">⬇ Télécharger</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publication 5 -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-sm overflow-hidden hover:border-brand-accent transition-all duration-300 group flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://tfactory.fr/wp-content/uploads/2025/05/TF-Insights-1-Banniere-1-scaled.jpg" alt="TF Insights 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <span class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#B29063;">2 mai 2025</span>
+                    <h3 class="text-white font-bold text-lg mb-3 leading-tight">TF Insights #1 – Édition Mai 2025</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed flex-1">La première lettre d'analyse réglementaire de Transformation Factory. Obligations prudentielles, données et transition verte.</p>
+                    <div class="flex gap-3 mt-5">
+                        <button onclick="openArticle('tf-insights-1-edition-mai-2025')" class="btn-lire-article">Lire l'article</button>
+                        <button onclick="openDownloadForm('TF Insights #1 – Édition Mai 2025', 'publications/insights-1.pdf')" class="flex-1 text-center text-xs font-bold uppercase tracking-wider py-2 px-4 transition-all duration-300 text-white" style="background:#026490;">⬇ Télécharger</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publication 6 -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-sm overflow-hidden hover:border-brand-accent transition-all duration-300 group flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://tfactory.fr/wp-content/uploads/2022/12/iStock-1051659174.jpg" alt="Leadership" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <span class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#B29063;">11 mai 2023</span>
+                    <h3 class="text-white font-bold text-lg mb-3 leading-tight">Des nouvelles priorités pour le leadership et les organisations de demain</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed flex-1">Comment les instances de gouvernance intègrent les nouveaux modes d'organisation du travail et le changement culturel associé.</p>
+                    <div class="flex gap-3 mt-5">
+                        <button onclick="openArticle('des-nouvelles-priorites-pour-le-leadership-et-les-organisations-de-demain')" class="flex-1 text-center text-xs font-bold uppercase tracking-wider py-2 px-4 text-white transition-all duration-300 cursor-pointer border-none" style="background:#026490;">Lire l'article →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publication 7 -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-sm overflow-hidden hover:border-brand-accent transition-all duration-300 group flex flex-col md:col-span-2 lg:col-span-1">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://tfactory.fr/wp-content/uploads/2022/12/learning-data-2021-09-24-03-39-23-utc-scaled-e1686174919588.jpg" alt="NZBA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <span class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#B29063;">19 avril 2023</span>
+                    <h3 class="text-white font-bold text-lg mb-3 leading-tight">Etude des objectifs sectoriels intermédiaires des émissions dans le cadre de la NZBA</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed flex-1">Étude comparative des objectifs sectoriels intermédiaires de réduction des émissions pour l'alignement sur l'accord de Paris.</p>
+                    <div class="flex gap-3 mt-5">
+                        <button onclick="openArticle('etude-des-objectifs-sectoriels-intermediaires-des-emissions-dans-le-cadre-de-la-nzba')" class="flex-1 text-center text-xs font-bold uppercase tracking-wider py-2 px-4 text-white transition-all duration-300 cursor-pointer border-none" style="background:#026490;">Lire l'article →</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="recevoir" class="py-24 bg-brand-900 relative overflow-hidden">        <!-- Decoration -->        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-accent/10 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 animate-pulse" style="animation-duration: 4s;"></div>        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">                                <!-- Left Content: Carousel -->                <div class="reveal-on-scroll relative min-h-[400px] flex flex-col justify-center">                    <div id="recevoir-carousel" class="insight-fade-wrapper">                        <div class="inline-block px-3 py-1 bg-brand-accent/20 border border-brand-accent/30 rounded-sm mb-6">                            <span id="recevoir-tag" class="text-xs font-bold text-brand-accent uppercase tracking-widest">Livre Blanc Exclusif 2024</span>                        </div>                        <h2 id="recevoir-title" class="text-4xl lg:text-5xl font-bold text-white mb-6">L'IA dans les Services Financiers : Gouvernance & Risques.</h2>                        <p id="recevoir-desc" class="text-slate-300 text-lg leading-relaxed mb-8">                            Comment intégrer l'intelligence artificielle générative dans vos processus critiques sans déstabiliser votre modèle de gouvernance actuel ? <br><br>                            Une analyse approfondie de nos experts pour les décideurs du secteur.                        </p>                        <ul id="recevoir-list" class="space-y-4 mb-8">                            <li class="flex items-start gap-3 text-slate-300">                                <i data-lucide="check" class="w-5 h-5 text-brand-accent mt-0.5"></i>                                <span>Analyse des cadres réglementaires (AI Act)</span>                            </li>                            <li class="flex items-start gap-3 text-slate-300">                                <i data-lucide="check" class="w-5 h-5 text-brand-accent mt-0.5"></i>                                <span>3 Cas d'usage à ROI immédiat pour l'assurance</span>                            </li>                            <li class="flex items-start gap-3 text-slate-300">                                <i data-lucide="check" class="w-5 h-5 text-brand-accent mt-0.5"></i>                                <span>Checklist de déploiement sécurisé</span>                            </li>                        </ul>                    </div>                    <!-- Carousel Indicators -->                    <div class="flex gap-3 mt-4">                        <button onclick="setRecevoirSlide(0)" class="w-2.5 h-2.5 rounded-full bg-brand-accent transition-all duration-300 insight-dot"></button>                        <button onclick="setRecevoirSlide(1)" class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all duration-300 insight-dot"></button>                        <button onclick="setRecevoirSlide(2)" class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all duration-300 insight-dot"></button>                    </div>                </div>                <!-- Right Content: Form OR AI Generator (Swappable) -->                <div class="reveal-on-scroll shadow-2xl" style="transition-delay: 200ms;">                                        <!-- Toggle Tabs -->                    <div class="flex rounded-t-sm overflow-hidden border-b border-slate-700 bg-brand-800/50 backdrop-blur-md">                        <button onclick="switchRecevoirTab('form')" id="recevoir-tab-form" class="flex-1 py-3 text-xs font-bold uppercase tracking-wider text-white bg-brand-accent/20 border-b-2 border-brand-accent transition-all hover:bg-brand-accent/10">                            Recevoir l'étude                        </button>                        <button onclick="switchRecevoirTab('ai')" id="recevoir-tab-ai" class="flex-1 py-3 text-xs font-bold uppercase tracking-wider text-slate-400 border-b-2 border-transparent hover:text-white transition-all hover:bg-white/5 flex items-center justify-center gap-2">                            <span>Insight Live (IA)</span>                            <span class="relative flex h-2 w-2">                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>                              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>                            </span>                        </button>                    </div>                    <!-- Container Body -->                    <div class="bg-brand-800 p-8 lg:p-10 rounded-b-sm border border-t-0 border-slate-700 min-h-[420px]">                                                <!-- 1. Default Form View -->                        <div id="recevoir-view-form" class="block animate-fade-in">                            <h3 class="text-2xl font-bold text-white mb-2">Télécharger le PDF</h3>                            <p class="text-sm text-slate-400 mb-8">Accès immédiat à l'étude complète.</p>                                                        <form onsubmit="event.preventDefault(); this.querySelector('button[type=submit]').textContent='✓ Demande envoyée'; setTimeout(()=>this.reset(),3000);" class="space-y-5">                                <div>                                    <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email Professionnel</label>                                    <div class="relative group">                                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">                                            <i data-lucide="mail" class="h-5 w-5 text-slate-500 group-focus-within:text-brand-accent transition-colors"></i>                                        </div>                                        <input type="email" name="email" id="email" class="block w-full pl-10 pr-3 py-3 bg-brand-900 border border-slate-600 rounded-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all sm:text-sm" placeholder="nom@entreprise.com" required>                                    </div>                                </div>                                                                <div>                                    <label for="role" class="block text-sm font-medium text-slate-300 mb-2">Fonction</label>                                    <select id="role" class="block w-full pl-3 pr-10 py-3 bg-brand-900 border border-slate-600 rounded-sm text-white focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent sm:text-sm">                                        <option>C-Level / Direction</option>                                        <option>Directeur de Programme</option>                                        <option>Direction IT / DSI</option>                                        <option>Autre</option>                                    </select>                                </div>                                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-sm shadow-sm text-sm font-bold text-white bg-brand-accent hover:bg-blue-600 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-brand-accent transition-all duration-300 uppercase tracking-wider">                                    Recevoir nos analyses stratégiques                                </button>                                                                <p class="text-xs text-slate-500 text-center mt-4">                                    En cliquant, vous acceptez notre politique de confidentialité.                                </p>                            </form>                        </div>                        <!-- 2. AI Generator View -->                        <div id="recevoir-view-ai" class="hidden animate-fade-in">                            <div class="flex items-center justify-between mb-4">                                <h3 class="text-xl font-bold text-white">TFactory AI Insight</h3>                                <span class="text-[10px] bg-brand-accent/20 text-brand-accent px-2 py-1 rounded border border-brand-accent/30 uppercase tracking-wider">Beta</span>                            </div>                                                        <p class="text-sm text-slate-400 mb-6">Posez une question stratégique. Notre IA (entraînée sur notre méthodologie) vous répond.</p>                            <div class="space-y-4">                                <div>                                    <textarea id="recevoir-ai-prompt" rows="3" class="block w-full p-3 bg-brand-900 border border-slate-600 rounded-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all text-sm" placeholder="Ex: Quels sont les impacts de DORA sur ma gestion des tiers ?"></textarea>                                </div>                                <button onclick="generateRecevoirInsight()" id="recevoir-btn-generate" class="w-full flex items-center justify-center gap-2 py-3 px-4 border border-transparent rounded-sm shadow-sm text-sm font-bold text-white bg-gradient-to-r from-brand-accent to-blue-600 hover:from-blue-600 hover:to-brand-accent hover:scale-[1.02] focus:outline-none transition-all duration-300 uppercase tracking-wider">                                    <i data-lucide="sparkles" class="w-4 h-4"></i>                                    Générer l'analyse                                </button>                                <!-- Output Area -->                                <div id="recevoir-ai-output" class="mt-4 p-4 bg-slate-900/50 border border-slate-700 rounded-sm min-h-[140px] text-sm text-slate-300 font-light hidden">                                    <!-- Content injected via JS -->                                </div>                            </div>                        </div>                    </div>                </div>            </div>        </div>    </section>
+
+<!-- ========== DOWNLOAD FORM MODAL ========== -->
+<div id="download-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;">
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:6px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;padding:32px;position:relative;">
+        <button onclick="closeDownloadForm()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#64748b;font-size:24px;cursor:pointer;">×</button>
+        <div style="margin-bottom:24px;">
+            <p style="color:#B29063;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Téléchargement gratuit</p>
+            <h3 id="download-modal-title" style="color:white;font-size:18px;font-weight:700;margin:0;line-height:1.4;"></h3>
+        </div>
+        <form id="download-form" onsubmit="submitDownloadForm(event)">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
+                <div>
+                    <label style="display:block;color:#94a3b8;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Prénom *</label>
+                    <input id="dl-prenom" type="text" required style="width:100%;padding:10px 12px;background:#0f172a;border:1px solid #334155;border-radius:4px;color:white;font-size:13px;outline:none;box-sizing:border-box;" />
+                </div>
+                <div>
+                    <label style="display:block;color:#94a3b8;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Nom *</label>
+                    <input id="dl-nom" type="text" required style="width:100%;padding:10px 12px;background:#0f172a;border:1px solid #334155;border-radius:4px;color:white;font-size:13px;outline:none;box-sizing:border-box;" />
+                </div>
+            </div>
+            <div style="margin-bottom:14px;">
+                <label style="display:block;color:#94a3b8;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Email professionnel *</label>
+                <input id="dl-email" type="email" required style="width:100%;padding:10px 12px;background:#0f172a;border:1px solid #334155;border-radius:4px;color:white;font-size:13px;outline:none;box-sizing:border-box;" />
+            </div>
+            <div style="margin-bottom:14px;">
+                <label style="display:block;color:#94a3b8;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Entreprise</label>
+                <input id="dl-entreprise" type="text" style="width:100%;padding:10px 12px;background:#0f172a;border:1px solid #334155;border-radius:4px;color:white;font-size:13px;outline:none;box-sizing:border-box;" />
+            </div>
+            <div style="margin-bottom:14px;">
+                <label style="display:block;color:#94a3b8;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Profession</label>
+                <input id="dl-profession" type="text" style="width:100%;padding:10px 12px;background:#0f172a;border:1px solid #334155;border-radius:4px;color:white;font-size:13px;outline:none;box-sizing:border-box;" />
+            </div>
+            <div style="margin-bottom:24px;">
+                <label style="display:block;color:#94a3b8;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Comment avez-vous connu TFactory ?</label>
+                <select id="dl-source" style="width:100%;padding:10px 12px;background:#0f172a;border:1px solid #334155;border-radius:4px;color:white;font-size:13px;outline:none;box-sizing:border-box;">
+                    <option value="">Sélectionner...</option>
+                    <option>LinkedIn</option>
+                    <option>Site web</option>
+                    <option>Conférence de Presse</option>
+                    <option>Recommandation</option>
+                    <option>Autre</option>
+                </select>
+            </div>
+            <button type="submit" id="dl-submit-btn" style="width:100%;padding:13px;background:#026490;color:white;border:none;border-radius:4px;font-size:13px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:0.05em;">
+                Télécharger maintenant
+            </button>
+            <p id="dl-status" style="text-align:center;font-size:12px;margin-top:10px;"></p>
+        </form>
+    </div>
+</div>
+<script>
+    let _downloadUrl = '';
+
+    function openDownloadForm(titre, url) {
+        _downloadUrl = url;
+        document.getElementById('download-modal-title').innerText = titre;
+        document.getElementById('download-form').reset();
+        document.getElementById('dl-status').innerText = '';
+        const modal = document.getElementById('download-modal');
+        modal.style.display = 'flex';
+    }
+
+    function closeDownloadForm() {
+        document.getElementById('download-modal').style.display = 'none';
+    }
+
+    document.getElementById('download-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeDownloadForm();
+    });
+
+    async function submitDownloadForm(e) {
+        e.preventDefault();
+        const btn = document.getElementById('dl-submit-btn');
+        const status = document.getElementById('dl-status');
+        btn.disabled = true;
+        btn.innerText = 'Envoi en cours...';
+
+        const data = {
+            prenom: document.getElementById('dl-prenom').value.trim(),
+            nom: document.getElementById('dl-nom').value.trim(),
+            email: document.getElementById('dl-email').value.trim(),
+            entreprise: document.getElementById('dl-entreprise').value.trim(),
+            profession: document.getElementById('dl-profession').value.trim(),
+            source: document.getElementById('dl-source').value,
+            publication_titre: document.getElementById('download-modal-title').innerText
+        };
+
+        try {
+            const res = await fetch(`${SUPABASE_URL}/rest/v1/downloads`, {
+                method: 'POST',
+                headers: {
+                    'apikey': SUPABASE_KEY,
+                    'Authorization': `Bearer ${SUPABASE_KEY}`,
+                    'Content-Type': 'application/json',
+                    'Prefer': 'return=minimal'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (res.ok) {
+                status.style.color = '#4ade80';
+                status.innerText = '✓ Merci ! Votre téléchargement commence...';
+                setTimeout(() => {
+                    window.open(_downloadUrl, '_blank');
+                    closeDownloadForm();
+                }, 1000);
+            } else {
+                throw new Error('Erreur serveur');
+            }
+        } catch(err) {
+            status.style.color = '#ef4444';
+            status.innerText = 'Erreur, veuillez réessayer.';
+            btn.disabled = false;
+            btn.innerText = 'Télécharger maintenant';
+        }
+    }
+</script>
+
+<!-- ========== ARTICLE MODAL ========== -->
+<div id="article-modal" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.8);backdrop-filter:blur(4px);align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto;">
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:6px;width:100%;max-width:760px;padding:40px;position:relative;margin:auto;">
+        <button onclick="closeArticle()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#64748b;font-size:28px;cursor:pointer;line-height:1;">×</button>
+        <p id="article-date" style="color:#B29063;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;"></p>
+        <h2 id="article-title" style="color:white;font-size:24px;font-weight:700;margin:0 0 24px 0;line-height:1.4;"></h2>
+        <div id="article-body" style="color:#cbd5e1;font-size:15px;line-height:1.8;"></div>
+    </div>
+</div>
+
+<script>
+const ARTICLES = {
+    'livre-blanc-immobilier-politique-du-logement-et-climat': {
+        titre: "Livre Blanc : Immobilier, politique du logement et climat",
+        date: "12 mai 2026",
+        contenu: `<p>Bâtir le renouveau : Proposition clés pour orienter une future politique du logement</p>
+<p><em>Livre Blanc réalisé sous la direction de Transformation Factory & le Club ENA Immobilier</em></p>
+<p>L'immobilier français traverse une crise sans précédent, son marché étant marqué par un effondrement de l'offre et de la demande. Ce livre blanc, piloté par Transformation Factory et le Club ENA Immobilier, affirme que l'urgence conjoncturelle (taux, inflation…) masque une mutation structurelle profonde (climat, démographie, usages) qui nécessite des réponses radicales à l'horizon des élections de 2027.</p>
+<p>Les propositions clés faites par un collectif d'auteurs issus des sphères immobilière, publique, financière et assurantielle ont pour objectif de nourrir le débat public.</p>
+<p>Le livre blanc formule 10 propositions clés concrètes destinées à des décideurs politiques et économiques afin de relancer le secteur immobilier à ce jour embolisé et dans la perspective des élections de 2027.</p>`
+    },
+    'tf-insights-4-edition-mars-2026': {
+        titre: "TF Insights #4 – Édition Mars 2026",
+        date: "30 mars 2026",
+        contenu: `<p>Nous avons le plaisir de vous présenter la quatrième édition de TF Insights, la lettre d'actualité de référence portée par le Hub Expertises Métiers & Réglementation de Transformation Factory.</p>
+<p>Pour cette nouvelle parution de TF Insights en ce début d'année 2026, nous décryptons un tournant décisif vers une conformité plus agile, dans un contexte de transformation profonde des cadres réglementaires européens.</p>
+<p>Téléchargez l'édition complète pour accéder à l'intégralité des analyses.</p>`
+    },
+    'tf-insights-3-edition-decembre-2025': {
+        titre: "TF Insights #3 – Édition Décembre 2025",
+        date: "3 décembre 2025",
+        contenu: `<p>Nous avons le plaisir de vous présenter la troisième édition de TF Insights, la lettre d'actualité de référence portée par le Hub Expertises Métiers & Réglementation de Transformation Factory.</p>
+<p>Pour cette dernière publication de l'année 2025, nous décryptons un moment charnière. Dans un paysage financier où l'Europe tente de renforcer sa souveraineté réglementaire tout en s'adaptant à un environnement international incertain.</p>
+<p>Téléchargez l'édition complète pour accéder à l'intégralité des analyses.</p>`
+    },
+    'tf-insights-2-edition-septembre-2025': {
+        titre: "TF Insights #2 – Édition Septembre 2025",
+        date: "11 septembre 2025",
+        contenu: `<p>Nous avons le plaisir de vous présenter la deuxième édition de TF Insights, notre lettre d'actualité réglementaire portée par le Hub Expertises Métiers & Réglementation de Transformation Factory.</p>
+<p>Dans un paysage bancaire et financier en mutation constante, marqué par des réformes européennes structurantes et une supervision renforcée, cette édition décrypte les enjeux essentiels de la rentrée 2025.</p>
+<p>Téléchargez l'édition complète pour accéder à l'intégralité des analyses.</p>`
+    },
+    'tf-insights-1-edition-mai-2025': {
+        titre: "TF Insights #1 – Édition Mai 2025",
+        date: "2 mai 2025",
+        contenu: `<p>TF Insights est la nouvelle lettre d'analyse réglementaire lancée par Transformation Factory, à l'initiative de notre Hub Expertises Métiers & Réglementation.</p>
+<p>Dans un environnement bancaire européen en pleine transformation – entre accélération des obligations prudentielles, consolidation des référentiels de données et transition verte – cette première édition pose les bases d'un regard structuré et opérationnel sur l'actualité réglementaire.</p>
+<p>Téléchargez l'édition complète pour accéder à l'intégralité des analyses.</p>`
+    },
+    'des-nouvelles-priorites-pour-le-leadership-et-les-organisations-de-demain': {
+        titre: "Des nouvelles priorités pour le leadership et les organisations de demain",
+        date: "11 mai 2023",
+        contenu: `<p>Aujourd'hui instances de gouvernance et de direction intègrent dans leurs réflexions stratégiques la question des nouveaux modes d'organisation du travail et du changement culturel associé.</p>
+<p>Les trois dernières années qui viennent de s'écouler, avec la Covid, les nouvelles pratiques montées très rapidement en puissance au sein des entreprises, de gré ou de force (télétravail, maîtrise par le plus grand nombre de nouveaux modes de communication…) ont marqué un changement radical de nos façons de fonctionner tant de manière individuelle que collective et ont révélé de forts dysfonctionnements au sein des organisations sur le plan psychologique, sociétal et économique.</p>
+<h3 style="color:white;font-size:18px;font-weight:700;margin:24px 0 12px;">Des nouvelles priorités pour le leadership</h3>
+<p>Sur le plan du leadership et de l'engagement, la crise et les nouvelles pratiques de travail ont fortement impacté l'organisation de l'entreprise, principalement au niveau du management intermédiaire. Les managers ont dû faire face à de nouveaux défis : maintenir la cohésion d'équipe à distance, adapter leurs pratiques de management, et gérer une charge de travail et de stress accrue.</p>
+<p>Face à ces enjeux, de nouvelles priorités émergent pour le leadership de demain : l'intelligence émotionnelle, la capacité à créer du lien et du sens, la flexibilité organisationnelle, et la capacité à gérer l'incertitude.</p>
+<h3 style="color:white;font-size:18px;font-weight:700;margin:24px 0 12px;">Des nouvelles formes d'organisation</h3>
+<p>Les organisations doivent repenser leurs modèles pour intégrer durablement le travail hybride, renforcer la culture d'entreprise à distance, et développer de nouvelles compétences managériales adaptées aux enjeux de demain.</p>`
+    },
+    'etude-des-objectifs-sectoriels-intermediaires-des-emissions-dans-le-cadre-de-la-nzba': {
+        titre: "Etude des objectifs sectoriels intermédiaires des émissions dans le cadre de la NZBA",
+        date: "19 avril 2023",
+        contenu: `<p>Pour assurer un alignement à long terme sur l'accord de Paris, il est crucial de fixer des objectifs intermédiaires de réduction des émissions. Dans ce contexte, Transformation Factory a réalisé une étude comparative des objectifs sectoriels intermédiaires de réduction des émissions pour 2030 fixés par des acteurs du secteur bancaire dans le cadre de la NZBA (Net Zero Banking Alliance).</p>
+<h3 style="color:white;font-size:18px;font-weight:700;margin:24px 0 12px;">La NZBA</h3>
+<p>La NZBA est une alliance de banques du monde entier, qui se sont engagées à atteindre la neutralité carbone d'ici 2050 ou avant, en alignant leurs activités sur les objectifs de l'Accord de Paris. Les banques membres travaillent ensemble pour développer des normes communes et faciliter la transition vers une économie à faible émission de carbone dans de nombreux secteurs. Avec 125 banques présentes dans 41 pays et représentant 41% des fonds mondiaux.</p>
+<h3 style="color:white;font-size:18px;font-weight:700;margin:24px 0 12px;">Objectifs de l'étude</h3>
+<p>Cette étude comparative analyse les objectifs sectoriels intermédiaires fixés par les principales banques membres de la NZBA pour 2030, dans les secteurs les plus émetteurs : immobilier, énergie, automobile, sidérurgie et agriculture. Elle permet d'identifier les meilleures pratiques et les écarts entre établissements.</p>`
+    }
+};
+
+function openArticle(slug) {
+    const article = ARTICLES[slug];
+    if (!article) return;
+    document.getElementById('article-date').innerText = article.date;
+    document.getElementById('article-title').innerText = article.titre;
+    document.getElementById('article-body').innerHTML = article.contenu;
+    const modal = document.getElementById('article-modal');
+    modal.style.display = 'flex';
+    modal.scrollTop = 0;
+}
+
+function closeArticle() {
+    document.getElementById('article-modal').style.display = 'none';
+}
+
+document.getElementById('article-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeArticle();
+});
+</script>
+<!-- ========== FEEDBACK TAB (intercalaire droit) ========== -->
+<div id="feedback-tab" onclick="toggleFeedbackPanel()" 
+     style="position:fixed;right:0;top:35%;transform:translateY(-50%) rotate(180deg);z-index:9990;
+            background:#143055;color:#B29063;border:1px solid #B29063;
+            writing-mode:vertical-rl;padding:14px 10px;cursor:pointer;
+            font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
+            border-radius:4px 0 0 4px;transition:background 0.2s;user-select:none;"
+     onmouseover="this.style.background='#026490'"
+     onmouseout="this.style.background='#143055'">
+    Votre avis
+</div>
+
+<!-- Backdrop -->
+<div id="feedback-backdrop" onclick="closeFeedbackPanel()"
+     style="display:none;position:fixed;inset:0;z-index:9991;background:rgba(0,0,0,0.5);backdrop-filter:blur(2px);"></div>
+
+<!-- Slide-over Panel -->
+<div id="feedback-panel"
+     style="position:fixed;right:-460px;top:0;height:100%;width:440px;max-width:95vw;z-index:9992;
+            background:#0f172a;border-left:1px solid #334155;
+            transition:right 0.35s cubic-bezier(0.4,0,0.2,1);
+            display:flex;flex-direction:column;overflow:hidden;">
+
+    <!-- Panel Header -->
+    <div style="padding:28px 28px 20px;border-bottom:1px solid #1e293b;flex-shrink:0;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+                <p style="color:#B29063;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:4px;">Transformation Factory</p>
+                <h3 style="color:white;font-size:18px;font-weight:700;margin:0;">Avis &amp; Retours</h3>
+            </div>
+            <button onclick="closeFeedbackPanel()" style="background:none;border:none;color:#475569;font-size:22px;cursor:pointer;line-height:1;padding:4px;">&#x2715;</button>
+        </div>
+    </div>
+
+    <!-- Scrollable content -->
+    <div style="flex:1;overflow-y:auto;padding:24px 28px;">
+
+        <!-- Form -->
+        <form id="feedback-form" onsubmit="submitFeedback(event)" style="margin-bottom:32px;">
+            <!-- Honeypot anti-spam -->
+            <input type="text" name="website" tabindex="-1" autocomplete="off"
+                   style="position:absolute;left:-9999px;opacity:0;height:0;" />
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+                <div>
+                    <label style="display:block;color:#64748b;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Nom *</label>
+                    <input id="fb-nom" type="text" required maxlength="100"
+                           style="width:100%;padding:9px 12px;background:#1e293b;border:1px solid #334155;border-radius:3px;color:white;font-size:13px;outline:none;box-sizing:border-box;font-family:Montserrat,sans-serif;" />
+                </div>
+                <div>
+                    <label style="display:block;color:#64748b;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Email *</label>
+                    <input id="fb-email" type="email" required maxlength="200"
+                           style="width:100%;padding:9px 12px;background:#1e293b;border:1px solid #334155;border-radius:3px;color:white;font-size:13px;outline:none;box-sizing:border-box;font-family:Montserrat,sans-serif;" />
+                </div>
+            </div>
+            <div style="margin-bottom:12px;">
+                <label style="display:block;color:#64748b;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Entreprise</label>
+                <input id="fb-entreprise" type="text" maxlength="150"
+                       style="width:100%;padding:9px 12px;background:#1e293b;border:1px solid #334155;border-radius:3px;color:white;font-size:13px;outline:none;box-sizing:border-box;font-family:Montserrat,sans-serif;" />
+            </div>
+            <div style="margin-bottom:18px;">
+                <label style="display:block;color:#64748b;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Message *</label>
+                <textarea id="fb-message" required rows="4" maxlength="1000"
+                          style="width:100%;padding:9px 12px;background:#1e293b;border:1px solid #334155;border-radius:3px;color:white;font-size:13px;outline:none;box-sizing:border-box;resize:vertical;font-family:Montserrat,sans-serif;"></textarea>
+            </div>
+            <button type="submit" id="fb-submit"
+                    style="width:100%;padding:12px;background:#026490;color:white;border:none;border-radius:3px;font-size:11px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:0.1em;font-family:Montserrat,sans-serif;transition:background 0.2s;"
+                    onmouseover="this.style.background='#143055'"
+                    onmouseout="this.style.background='#026490'">
+                Soumettre mon avis
+            </button>
+            <p id="fb-status" style="text-align:center;font-size:12px;margin-top:10px;min-height:18px;font-family:Montserrat,sans-serif;"></p>
+        </form>
+
+        <!-- Separator -->
+        <div style="border-top:1px solid #1e293b;margin-bottom:24px;"></div>
+
+        <!-- Comments list -->
+        <div>
+            <h4 style="color:#64748b;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:16px;">Avis publiés</h4>
+            <div id="feedback-list">
+                <p style="color:#334155;font-size:13px;text-align:center;padding:20px 0;">Chargement...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Panel toggle
+    function toggleFeedbackPanel() {
+        const panel = document.getElementById('feedback-panel');
+        const isOpen = panel.style.right === '0px';
+        isOpen ? closeFeedbackPanel() : openFeedbackPanel();
+    }
+    function openFeedbackPanel() {
+        document.getElementById('feedback-panel').style.right = '0px';
+        document.getElementById('feedback-backdrop').style.display = 'block';
+        loadFeedback();
+    }
+    function closeFeedbackPanel() {
+        document.getElementById('feedback-panel').style.right = '-460px';
+        document.getElementById('feedback-backdrop').style.display = 'none';
+    }
+
+    // Load approved comments only
+    async function loadFeedback() {
+        const list = document.getElementById('feedback-list');
+        list.innerHTML = '<p style="color:#334155;font-size:13px;text-align:center;padding:20px 0;">Chargement...</p>';
+        try {
+            const res = await fetch(
+                SUPABASE_URL + '/rest/v1/comments?select=*&is_approved=eq.true&order=created_at.desc',
+                { headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY } }
+            );
+            const data = await res.json();
+            if (!data.length) {
+                list.innerHTML = '<p style="color:#334155;font-size:13px;text-align:center;padding:20px 0;font-style:italic;">Soyez le premier a partager votre avis professionnel.</p>';
+                return;
+            }
+            list.innerHTML = data.map(c => `
+                <div style="border-top:1px solid #1e293b;padding:16px 0;">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+                        <div>
+                            <span style="color:white;font-weight:700;font-size:13px;">${escapeHtml(c.name)}</span>
+                            ${c.entreprise ? '<span style="color:#475569;font-size:11px;margin-left:8px;">' + escapeHtml(c.entreprise) + '</span>' : ''}
+                        </div>
+                        <span style="color:#334155;font-size:11px;flex-shrink:0;margin-left:8px;">${new Date(c.created_at).toLocaleDateString('fr-FR')}</span>
+                    </div>
+                    <p style="color:#94a3b8;font-size:13px;line-height:1.6;margin:0;">${escapeHtml(c.message)}</p>
+                </div>
+            `).join('');
+        } catch(e) {
+            list.innerHTML = '<p style="color:#ef4444;font-size:13px;text-align:center;">Erreur de chargement.</p>';
+        }
+    }
+
+    // Submit comment
+    async function submitFeedback(e) {
+        e.preventDefault();
+        // Honeypot check
+        const honeypot = document.querySelector('#feedback-form input[name="website"]');
+        if (honeypot && honeypot.value) return;
+
+        const nom = document.getElementById('fb-nom').value.trim();
+        const email = document.getElementById('fb-email').value.trim();
+        const entreprise = document.getElementById('fb-entreprise').value.trim();
+        const message = document.getElementById('fb-message').value.trim();
+        const status = document.getElementById('fb-status');
+        const btn = document.getElementById('fb-submit');
+
+        // Basic validation
+        if (!nom || !email || !message) return;
+        if (message.length < 10) { status.style.color='#ef4444'; status.textContent='Message trop court.'; return; }
+
+        btn.disabled = true;
+        btn.textContent = 'Envoi...';
+        status.textContent = '';
+
+        try {
+            const res = await fetch(SUPABASE_URL + '/rest/v1/comments', {
+                method: 'POST',
+                headers: {
+                    'apikey': SUPABASE_KEY,
+                    'Authorization': 'Bearer ' + SUPABASE_KEY,
+                    'Content-Type': 'application/json',
+                    'Prefer': 'return=minimal'
+                },
+                body: JSON.stringify({ name: nom, email: email, entreprise: entreprise, message: message, is_approved: false })
+            });
+            if (res.ok) {
+                status.style.color = '#4ade80';
+                status.textContent = '';
+                document.getElementById('feedback-form').innerHTML = `
+                    <div style="text-align:center;padding:24px 0;">
+                        <div style="font-size:32px;margin-bottom:12px;">✓</div>
+                        <p style="color:#4ade80;font-weight:700;font-size:14px;margin-bottom:8px;">Merci pour votre contribution.</p>
+                        <p style="color:#64748b;font-size:12px;line-height:1.6;">Votre message a ete transmis a nos equipes pour validation avant publication.</p>
+                    </div>`;
+            } else {
+                throw new Error();
+            }
+        } catch {
+            status.style.color = '#ef4444';
+            status.textContent = 'Une erreur est survenue. Veuillez reessayer.';
+            btn.disabled = false;
+            btn.textContent = 'Soumettre mon avis';
+        }
+    }
+
+    function escapeHtml(str) {
+        return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+</script>
+
+<script>
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+    window.addEventListener('load', () => { if (typeof lucide !== 'undefined') lucide.createIcons(); });
+</script>
+
+<script>
+// Recevoir section renamed functions
+function setRecevoirSlide(n) {
+    const dots = document.querySelectorAll('.insight-dot');
+    const slides = [
+        { tag: 'Livre Blanc Exclusif 2024', title: "L'IA dans les Services Financiers : Gouvernance & Risques.", desc: "Comment intégrer l'intelligence artificielle générative dans vos processus critiques sans déstabiliser votre modèle de gouvernance actuel ?<br><br>Une analyse approfondie de nos experts pour les décideurs du secteur.", list: ["Analyse des cadres réglementaires (AI Act)", "3 Cas d'usage à ROI immédiat pour l'assurance", "Checklist de déploiement sécurisé"] },
+        { tag: 'Étude Réglementaire 2024', title: "DORA, Bâle IV, CSRD : Le calendrier de la transformation.", desc: "Trois réformes majeures convergent en 2025. Quels sont les impacts réels sur votre roadmap IT et vos processus de gouvernance ?", list: ["Cartographie des exigences clés par directive", "Analyse d'impact sur les SI legacy", "Guide de priorisation des chantiers"] },
+        { tag: 'Note Stratégique', title: "Modèles opérationnels bancaires : ce qui change vraiment.", desc: "Au-delà des discours, quelles transformations structurelles les banques européennes doivent-elles engager pour rester compétitives ?", list: ["Benchmark des modèles européens", "Les 5 chantiers prioritaires", "Retours d'expérience TFactory"] }
+    ];
+    const slide = slides[n] || slides[0];
+    const wrapper = document.getElementById('insight-carousel');
+    if (!wrapper) return;
+    wrapper.classList.add('insight-fade-out');
+    setTimeout(() => {
+        document.getElementById('insight-tag').textContent = slide.tag;
+        document.getElementById('insight-title').textContent = slide.title;
+        document.getElementById('insight-desc').innerHTML = slide.desc;
+        document.getElementById('insight-list').innerHTML = slide.list.map(l => '<li class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-5 h-5 text-brand-accent mt-0.5"></i><span>' + l + '</span></li>').join('');
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        wrapper.classList.remove('insight-fade-out');
+        wrapper.classList.add('insight-fade-in');
+        dots.forEach((d, i) => { d.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 insight-dot ' + (i === n ? 'bg-brand-accent' : 'bg-slate-700 hover:bg-slate-500'); });
+        setTimeout(() => wrapper.classList.remove('insight-fade-in'), 500);
+    }, 300);
+}
+
+function switchRecevoirTab(tab) {
+    const formView = document.getElementById('insight-view-form');
+    const aiView = document.getElementById('insight-view-ai');
+    const tabForm = document.getElementById('tab-form');
+    const tabAi = document.getElementById('tab-ai');
+    if (tab === 'form') {
+        formView && (formView.style.display = 'block');
+        aiView && (aiView.style.display = 'none');
+        tabForm && (tabForm.className = tabForm.className.replace('text-slate-400', 'text-white bg-brand-accent/20 border-b-2 border-brand-accent'));
+    } else {
+        formView && (formView.style.display = 'none');
+        aiView && (aiView.style.display = 'block');
+    }
+}
+
+async function generateRecevoirInsight() {
+    const prompt = document.getElementById('ai-prompt')?.value;
+    const output = document.getElementById('ai-output');
+    if (!prompt || !output) return;
+    output.classList.remove('hidden');
+    output.textContent = 'Analyse en cours...';
+    setTimeout(() => {
+        output.innerHTML = '<p>Analyse générée sur la base de notre méthodologie. Pour une réponse personnalisée, contactez nos experts.</p>';
+    }, 1500);
+}
+</script>
+
+</body>
+</html>
