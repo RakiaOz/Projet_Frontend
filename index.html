@@ -729,4 +729,16 @@ async function generateRecevoirInsight() {
     }, 1500);
 }
 </script>
+
+<script>
+function openDownloadForm(titre, pdfPath) {
+    const a = document.createElement('a');
+    a.href = pdfPath;
+    a.download = pdfPath.split('/').pop();
+    a.target = '_blank';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+</script>
 </body></html>
